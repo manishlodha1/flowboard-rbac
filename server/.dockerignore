@@ -1,0 +1,6 @@
+# Excluded from server Docker context
+node_modules
+dist
+.env
+*.db
+.dev.db

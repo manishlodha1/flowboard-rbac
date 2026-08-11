@@ -1,0 +1,23 @@
+{
+  "name": "flowboard-rbac",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FlowBoard — Project Tracker with Role-Based Access Control",
+  "scripts": {
+    "dev": "concurrently -n server,client -c teal,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w server && npm run build -w client",
+    "start": "concurrently -n server,client -c teal,magenta \"npm run start -w server\" \"npm run start -w client\"",
+    "seed": "npm run seed -w server",
+    "db:up": "docker compose up -d --wait postgres",
+    "db:down": "docker compose down",
+    "db:push": "npm run db:push -w server",
+    "db:setup": "npm run db:up && npm run db:push -w server && npm run seed -w server"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

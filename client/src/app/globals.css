@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f7f5f1;
+  --foreground: #141c2e;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+@layer utilities {
+  .grid-fade {
+    background-image:
+      linear-gradient(rgba(20, 28, 46, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20, 28, 46, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+}
